@@ -16,6 +16,10 @@ class ComposerStaticInit2185d2f99bcd56787481d9357a5972d3
         array (
             'WpOrg\\Requests\\' => 15,
         ),
+        'T' => 
+        array (
+            'Twilio\\' => 7,
+        ),
         'R' => 
         array (
             'Razorpay\\Tests\\' => 15,
@@ -31,6 +35,10 @@ class ComposerStaticInit2185d2f99bcd56787481d9357a5972d3
         'WpOrg\\Requests\\' => 
         array (
             0 => __DIR__ . '/..' . '/rmccue/requests/src',
+        ),
+        'Twilio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
         ),
         'Razorpay\\Tests\\' => 
         array (
