@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Payment Gateway</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <form id="paymentForm">
+        <h2>Make a Payment</h2>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" required>
+        <button type="button" id="payButton">Pay with Razorpay</button>
+    </form>
+
+    <script>
+        document.getElementById('payButton').onclick = function(e) {
+            var amount = document.getElementById('amount').value * 100; // Convert to paisa
+            var options = {
+                "key": "rzp_test_m5XZYW8t6K0K99", // Replace with your Razorpay Key ID
+                "amount": amount,
+                "currency": "INR",
+                "name": "Your Company Name",
+                "description": "Payment Description",
+                "handler": function(response) {
+                    alert("Payment successful. Razorpay Payment ID: " + response.razorpay_payment_id);
+                    // Optionally, you can redirect to a success page or further process the payment
+                },
+                "prefill": {
+                    "name": "Your Name",
+                    "email": "your_email@example.com",
+                    "contact": "9999999999"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
